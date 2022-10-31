@@ -107,7 +107,7 @@ class ElectronicSignature:
         else:
             print(f'Подпись Эль-Гамаля некорректна')
 
-    def __signature_gost(self, m, a, q, p, x) -> list:
+    def __signature_gost(self, m, a, q, p, x) -> int:
         hash = int(hashlib.sha256(m.encode()).hexdigest(), 16) % q
         if hash == 0:
             hash += 1
